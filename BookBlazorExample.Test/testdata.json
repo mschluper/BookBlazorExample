@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "category": {
+      "id": 2,
+      "name": "Sporting Goods"
+    },
+    "price": 49.99,
+    "stocked": true,
+    "name": "Football"
+  },
+  {
+    "id": 2,
+    "category": {
+      "id": 2,
+      "name": "Sporting Goods"
+    },
+    "price": 9.99,
+    "stocked": true,
+    "name": "Baseball"
+  },
+  {
+    "id": 3,
+    "category": {
+      "id": 2,
+      "name": "Sporting Goods"
+    },
+    "price": 29.99,
+    "stocked": false,
+    "name": "Basketball"
+  },
+  {
+    "id": 4,
+    "category": {
+      "id": 1,
+      "name": "Electronics"
+    },
+    "price": 99.99,
+    "stocked": true,
+    "name": "iPod Touch"
+  },
+  {
+    "id": 5,
+    "category": {
+      "id": 1,
+      "name": "Electronics"
+    },
+    "price": 399.99,
+    "stocked": false,
+    "name": "iPhone 5"
+  },
+  {
+    "id": 6,
+    "category": {
+      "id": 1,
+      "name": "Electronics"
+    },
+    "price": 199.99,
+    "stocked": true,
+    "name": "Nexus 7"
+  }
+]

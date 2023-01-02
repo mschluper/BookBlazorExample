@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RequirementsTracer", "RequirementsTracer\RequirementsTracer.csproj", "{EE63C4DD-CC5E-45BA-8702-908C31394259}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE63C4DD-CC5E-45BA-8702-908C31394259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE63C4DD-CC5E-45BA-8702-908C31394259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE63C4DD-CC5E-45BA-8702-908C31394259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE63C4DD-CC5E-45BA-8702-908C31394259}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38A4E070-A42B-443E-8AAD-7AF4AFF275B4}
+	EndGlobalSection
+EndGlobal

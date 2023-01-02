@@ -1,0 +1,27 @@
+﻿@page "/products"
+@using BookBlazorExample.Components;
+
+<PageTitle>Blazor Example: Products</PageTitle>
+
+<h3>Product List</h3>
+
+<div>
+    <SearchBar
+        FilterText="@state.FilterText"
+        InStockOnly="@state.InStockOnly"
+        OnFilterChange="@HandleFilterChange"
+        OnInStockChange="@HandleInStockChange"
+    />
+    <ProductTable
+        Products="@state.Products"
+        FilterText="@state.FilterText"
+        InStockOnly="@state.InStockOnly">
+            <RowTemplate Context="context">
+                <ProductRow Product="@context" />
+            </RowTemplate>
+            <CategorizedRowTemplate>
+                <ProductCategoryRow CategoryName="@context.Category?.Name"></ProductCategoryRow>
+                <ProductRow Product="@context" />
+            </CategorizedRowTemplate>
+    </ProductTable>
+</div>

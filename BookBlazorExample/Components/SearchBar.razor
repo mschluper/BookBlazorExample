@@ -1,0 +1,40 @@
+﻿<form>
+    <input
+        type="text"
+        placeholder="Search..."
+        value="@FilterText"
+        @oninput="HandleFilterInput"/>
+    <p>
+        <input
+            id="in-stock"
+            type="checkbox"
+            checked="@InStockOnly"
+            @onchange="HandleInStockChange"
+        />
+        <label for="in-stock">&nbsp;Only show products in stock</label>
+    </p>
+</form>
+
+@code {
+    [Parameter]
+    public string? FilterText { get; set; }
+
+    [Parameter]
+    public bool InStockOnly { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnFilterChange { get; set; }
+
+    [Parameter]
+    public EventCallback<bool> OnInStockChange { get; set; }
+
+    private async Task HandleFilterInput(ChangeEventArgs e)
+    {
+        await OnFilterChange.InvokeAsync(e.Value?.ToString() ?? string.Empty);
+    }
+
+    private async Task HandleInStockChange(ChangeEventArgs e)
+    {
+        await OnInStockChange.InvokeAsync(e.Value?.ToString() == "True");
+    }
+}
