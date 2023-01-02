@@ -1,0 +1,18 @@
+Microsoft (R) Test Execution Command Line Tool Version 17.4.1 (x64)
+Copyright (c) Microsoft Corporation.  All rights reserved.
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 7.0.1)
+[xUnit.net 00:00:00.69]   Discovering: BookBlazorExample.Test
+[xUnit.net 00:00:00.72]   Discovered:  BookBlazorExample.Test
+[xUnit.net 00:00:00.72]   Starting:    BookBlazorExample.Test
+[xUnit.net 00:00:01.06]   Finished:    BookBlazorExample.Test
+  Passed BookBlazorExample.Test.ProductTests.FilterInStock [286 ms]
+  Passed BookBlazorExample.Test.ProductTests.Search [9 ms]
+  Passed BookBlazorExample.Test.ProductTests.DisplayProducts [2 ms]
+
+Test Run Successful.
+Total tests: 3
+     Passed: 3
+ Total time: 1.6582 Seconds

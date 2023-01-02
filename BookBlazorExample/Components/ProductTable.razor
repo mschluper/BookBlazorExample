@@ -1,0 +1,54 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th class="right">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var currentCategoryId = 0;
+
+            foreach(var product in Products)
+            {
+                if (product!.Category?.Id == currentCategoryId || CategorizedRowTemplate == null)
+                {
+                    if (RowTemplate != null)
+                    {
+                        @RowTemplate(product)
+                    }
+                }
+                else if (CategorizedRowTemplate != null)
+                {
+                    currentCategoryId = product!.Category?.Id ?? 0;
+                    @CategorizedRowTemplate(product)
+                }
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    public List<IComponent> Rows { get; set; } = new();
+
+    [Parameter]
+    public string FilterText { get; set; } = string.Empty;
+
+    [Parameter]
+    public bool InStockOnly { get; set; }
+
+    [Parameter]
+    public List<Models.Product> Products { get; set; } = new();
+
+    [Parameter]
+    public RenderFragment<Models.Product>? RowTemplate { get; set; }
+
+    [Parameter]
+    public RenderFragment<Models.Product>? CategorizedRowTemplate { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        Products = Products.Where(p => (!InStockOnly || p.IsInStock) && p.Name.Contains(FilterText ?? string.Empty)).ToList();
+        base.OnParametersSet();
+    }
+}

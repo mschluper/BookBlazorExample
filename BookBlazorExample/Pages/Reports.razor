@@ -1,0 +1,30 @@
+﻿@page "/reports"
+
+<PageTitle>Blazor Example: Reports</PageTitle>
+
+<div class="d-flex flex-row align-items-baseline">
+    <h3>Requirement Coverage</h3> 
+    <span class="mx-2">as of @lastModifiedDate.ToString("yyyy-MM-dd HH:mm")</span>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Requirement Id</th>
+            <th>Definition</th>
+            <th>Is Covered By Test</th>
+            <th>Passed Test(s)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var requirement in requirements)
+        {
+            <tr>
+                <td class="@(requirement.PassedTests ? "green" : "red")">@requirement.Id</td>
+                <td>@requirement.Definition</td>
+                <td>@requirement.IsCoveredByTest</td>
+                <td>@requirement.PassedTests</td>
+            </tr>
+        }
+    </tbody>
+</table>

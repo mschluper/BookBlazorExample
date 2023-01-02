@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlazorExample", "BookBlazorExample\BookBlazorExample.csproj", "{CD5443DF-0A15-4495-93FF-FA141B0F859A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookBlazorExample.Test", "BookBlazorExample.Test\BookBlazorExample.Test.csproj", "{5EC5A7CE-C18F-4407-8B3F-7F46BFBE6F1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD5443DF-0A15-4495-93FF-FA141B0F859A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5443DF-0A15-4495-93FF-FA141B0F859A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5443DF-0A15-4495-93FF-FA141B0F859A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5443DF-0A15-4495-93FF-FA141B0F859A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EC5A7CE-C18F-4407-8B3F-7F46BFBE6F1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EC5A7CE-C18F-4407-8B3F-7F46BFBE6F1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EC5A7CE-C18F-4407-8B3F-7F46BFBE6F1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EC5A7CE-C18F-4407-8B3F-7F46BFBE6F1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38A4E070-A42B-443E-8AAD-7AF4AFF275B4}
+	EndGlobalSection
+EndGlobal
