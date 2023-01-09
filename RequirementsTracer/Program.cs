@@ -47,7 +47,7 @@ process.Start();
 process.WaitForExit(60000); // wait at most 60 seconds
 
 string strCmdText;
-strCmdText = @"/C ""C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"" C:\repos\BookBlazorExample\BookBlazorExample.Test\bin\Debug\net7.0\BookBlazorExample.Test.dll > C:\repos\BookBlazorExample\BookBlazorExample\test_output.txt";
+strCmdText = @$"/C ""C:\Program Files\Microsoft Visual Studio\2022\Professional\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe"" {rootDir}\BookBlazorExample.Test\bin\Debug\net7.0\BookBlazorExample.Test.dll > {rootDir}\BookBlazorExample\test_output.txt";
 System.Diagnostics.Process.Start("CMD.exe", strCmdText).WaitForExit(60000);
 
 

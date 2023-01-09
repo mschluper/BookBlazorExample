@@ -54,6 +54,52 @@ namespace RequirementsTracer
                 Definition = "Upon opening the page, the app's requirements are listed, with for each an Id, a definition, whether they have a covering test, and whether the tests passed.",
                 PassedTests = false,
             },
+            new()
+            {
+                Id = "ProductForm",
+                ParentId = "App",
+                PassedTests = false,
+            },
+            new()
+            {
+                Id = "ProductNameRequired",
+                ParentId = "ProductForm",
+                Definition = @"Upon deleting a product name, NameIsMissing becomes true, and so do NameIsInvalid and ProductIsInvalid; 
+                    InvalidErrorMessage gets value NameIsMissing. ",
+                PassedTests = false,
+            },
+            new()
+            {
+                Id = "ProductNameMaxLength",
+                ParentId = "ProductForm",
+                Definition = @"Upon changing a product name, it may become too long. If so NameIsTooLong becomes true 
+                    and so do NameIsInvalid and ProductIsInvalid; InvalidNameErrorMessage gets value NameMaxLength. ",
+                PassedTests = false,
+            },
+            new()
+            {
+                Id = "ProductNameUnique",
+                ParentId = "ProductForm",
+                Definition = @"Upon changing a product name, it may become equal to the name of another product. If so NameIsInUse becomes true 
+                    and so do NameIsInvalid and ProductIsInvalid; InvalidNameErrorMessage gets value NameUnique.",
+                PassedTests = false,
+            },
+            new()
+            {
+                Id = "ProductPriceRequired",
+                ParentId = "ProductForm",
+                Definition = @"Upon changing a product price to zero, PriceIsInvalid becomes true
+                    and so does ProductIsInvalid.",
+                PassedTests = false,
+            },
+            new()
+            {
+                Id = "ProductCategoryRequired",
+                ParentId = "ProductForm",
+                Definition = @"Upon changing a product name, NameIsMissing is recalculated. 
+                    If true, ProductIsInvalid equals true and InvalidNameErrorMessage has value NameRequired.",
+                PassedTests = false,
+            },
         };
     }
 }
