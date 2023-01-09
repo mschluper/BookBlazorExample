@@ -7,6 +7,15 @@
     <span class="mx-2">as of @lastModifiedDate.ToString("yyyy-MM-dd HH:mm")</span>
 </div>
 
+@{
+    var noTab = new MarkupString("");
+    var tab1 = new MarkupString("_ ");
+    var tab2 = new MarkupString("__ ");
+    var tab3 = new MarkupString("___ ");
+    var tab4 = new MarkupString("_____ ");
+    MarkupString[] indent = new MarkupString[5] { noTab, tab1, tab2, tab3, tab4, };
+}
+
 <table class="table">
     <thead>
         <tr>
@@ -20,7 +29,7 @@
         @foreach(var requirement in requirements)
         {
             <tr>
-                <td class="@(requirement.PassedTests ? "green" : "red")">@requirement.Id</td>
+                <td class="@(requirement.PassedTests ? "green" : "red")">@indent[requirement.Level] @requirement.Id</td>
                 <td>@requirement.Definition</td>
                 <td>@requirement.IsCoveredByTest</td>
                 <td>@requirement.PassedTests</td>

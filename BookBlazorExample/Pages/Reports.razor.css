@@ -1,3 +1,7 @@
+td.green, td.red {
+    white-space: nowrap;
+}
+
 td.green {
     background-color: #00FF0088;
 }

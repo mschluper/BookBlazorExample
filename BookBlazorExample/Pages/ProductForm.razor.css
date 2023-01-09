@@ -1,0 +1,8 @@
+﻿div.product-column {
+    width: 33.3%;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: auto;
+}
