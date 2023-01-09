@@ -1,6 +1,7 @@
 ﻿<tr>
-    <td class="@(Product?.IsInStock == null || !Product.IsInStock ? "absent" : "")">@Product?.Name</td>
+    <td class="@(Product?.IsInStock == null || !Product.IsInStock ? "absent" : "")"><a href="products/@Product?.Id">@Product?.Name</a></td>
     <td class="right">&nbsp;$@Product?.Price</td>
+    @*<td><i class="mx-3 oi oi-pencil"></i></td>*@
 </tr>
 
 

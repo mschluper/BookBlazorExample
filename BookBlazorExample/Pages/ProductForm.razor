@@ -1,0 +1,55 @@
+﻿@page "/products/{Id:int}"
+
+<PageTitle>Blazor Example: Product</PageTitle>
+
+<h3>Product Form</h3>
+
+@using BookBlazorExample.Components
+
+@if (state.IsLoading)
+{
+    <div class="mt-4">
+        <Loader />
+    </div>
+}
+else
+{
+    if (state.ProductDoesNotExist)
+    {
+        <span>The requested product does not exist.</span>
+    }
+    else
+    {
+        <div class="d-flex mt-3">
+            <div class="mb-3 product-column">
+                <label for="product-name" class="form-label">Name</label>
+                <input type="text" id="product-name" class="form-control" value="@state.Name" @oninput="OnInputName">
+                <div class="invalid-feedback" style="@(state.NameIsInvalid ? "display:block" : "")">
+                    @state.InvalidNameErrorMessage
+                </div>
+            </div>
+            <div class="mb-3 product-column">
+                <label for="price" class="form-label">Price</label>
+                <input id="price" type="number" step="1" class="form-control" min="0" value="@state.Price" @onchange="e => OnChangePrice(e)" />
+                <div class="invalid-feedback" style="@(state.PriceIsInvalid ? "display:block" : "")">
+                    @state.InvalidPriceErrorMessage
+                </div>
+            </div>
+            <div class="mb-3 product-column">
+                <label for="category" class="form-label">Category</label>
+                <select id="category" class="form-select" @onchange="OnChangeCategory" style="width:auto;">
+                    <option value="0"></option>
+                    @foreach (var pc in state.ProductCategories)
+                    {
+                        <option value="@pc.Id" selected="@(state.CategoryId == pc.Id)">@pc.Name</option>
+                    }
+                </select>
+                <div class="invalid-feedback" style="@(state.CategoryIsInvalid ? "display:block" : "")">
+                    @state.InvalidCategoryErrorMessage
+                </div>
+            </div>
+        </div>
+
+
+    }
+}

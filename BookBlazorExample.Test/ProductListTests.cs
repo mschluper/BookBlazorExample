@@ -13,7 +13,7 @@ using Xunit.Abstractions;
 namespace BookBlazorExample.Test
 {
 
-    public class ProductTests : TestContext, IDisposable
+    public class ProductListTests : TestContext, IDisposable
     {
         private readonly ITestOutputHelper testOutput;
 
@@ -22,7 +22,7 @@ namespace BookBlazorExample.Test
             GC.SuppressFinalize(this);
         }
 
-        public ProductTests(ITestOutputHelper testOutput)
+        public ProductListTests(ITestOutputHelper testOutput)
         {
             var authContext = this.AddTestAuthorization();
             authContext.SetAuthorized("Test User");

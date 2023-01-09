@@ -4,15 +4,20 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 Starting test execution, please wait...
 A total of 1 test files matched the specified pattern.
 [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 7.0.1)
-[xUnit.net 00:00:00.69]   Discovering: BookBlazorExample.Test
-[xUnit.net 00:00:00.72]   Discovered:  BookBlazorExample.Test
-[xUnit.net 00:00:00.72]   Starting:    BookBlazorExample.Test
-[xUnit.net 00:00:01.06]   Finished:    BookBlazorExample.Test
-  Passed BookBlazorExample.Test.ProductTests.FilterInStock [286 ms]
-  Passed BookBlazorExample.Test.ProductTests.Search [9 ms]
-  Passed BookBlazorExample.Test.ProductTests.DisplayProducts [2 ms]
+[xUnit.net 00:00:00.80]   Discovering: BookBlazorExample.Test
+[xUnit.net 00:00:00.83]   Discovered:  BookBlazorExample.Test
+[xUnit.net 00:00:00.83]   Starting:    BookBlazorExample.Test
+[xUnit.net 00:00:01.24]   Finished:    BookBlazorExample.Test
+  Passed BookBlazorExample.Test.ProductFormTests.ProductPriceRequired [288 ms]
+  Passed BookBlazorExample.Test.ProductListTests.Search [328 ms]
+  Passed BookBlazorExample.Test.ProductListTests.DisplayProducts [5 ms]
+  Passed BookBlazorExample.Test.ProductFormTests.ProductNameMaxLength [46 ms]
+  Passed BookBlazorExample.Test.ProductListTests.FilterInStock [8 ms]
+  Passed BookBlazorExample.Test.ProductFormTests.ProductNameRequired [6 ms]
+  Passed BookBlazorExample.Test.ProductFormTests.ProductCategoryRequired [6 ms]
+  Passed BookBlazorExample.Test.ProductFormTests.ProductNameUnique [7 ms]
 
 Test Run Successful.
-Total tests: 3
-     Passed: 3
- Total time: 1.6582 Seconds
+Total tests: 8
+     Passed: 8
+ Total time: 1.8505 Seconds
