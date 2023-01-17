@@ -4,7 +4,7 @@
 
 <div class="d-flex flex-row align-items-baseline">
     <h3>Requirement Coverage</h3> 
-    <span class="mx-2">as of @lastModifiedDate.ToString("yyyy-MM-dd HH:mm")</span>
+    <span class="mx-2">as of @state.LastModifiedDate.ToString("yyyy-MM-dd HH:mm")</span>
 </div>
 
 @{
@@ -16,6 +16,18 @@
     MarkupString[] indent = new MarkupString[5] { noTab, tab1, tab2, tab3, tab4, };
 }
 
+<div class="d-flex flex-row align-items-center text-muted">
+    <span>Property</span>
+    <select id="property-definition" class="form-select mx-3 text-muted" @onchange="OnChangeProperty" style="width:auto;">
+        <option value="0"></option>
+        @foreach (var pd in state.PropertyDefinitions)
+        {
+            <option value="@pd.Name">@pd.Name</option>
+        }
+    </select>
+    <div>@state.SelectedProperty?.Definition</div>
+</div>
+
 <table class="table">
     <thead>
         <tr>
@@ -26,7 +38,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var requirement in requirements)
+        @foreach(var requirement in state.Requirements)
         {
             <tr>
                 <td class="@(requirement.PassedTests ? "green" : "red")">@indent[requirement.Level] @requirement.Id</td>

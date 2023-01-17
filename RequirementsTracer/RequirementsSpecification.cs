@@ -65,7 +65,7 @@ namespace RequirementsTracer
                 Id = "ProductNameRequired",
                 ParentId = "ProductForm",
                 Definition = @"Upon deleting a product name, NameIsMissing becomes true, and so do NameIsInvalid and ProductIsInvalid; 
-                    InvalidErrorMessage gets value NameIsMissing. ",
+                    InvalidErrorMessage gets value NameIsRequired. ",
                 PassedTests = false,
             },
             new()
@@ -73,7 +73,7 @@ namespace RequirementsTracer
                 Id = "ProductNameMaxLength",
                 ParentId = "ProductForm",
                 Definition = @"Upon changing a product name, it may become too long. If so NameIsTooLong becomes true 
-                    and so do NameIsInvalid and ProductIsInvalid; InvalidNameErrorMessage gets value NameMaxLength. ",
+                    and so do NameIsInvalid and ProductIsInvalid; InvalidNameErrorMessage gets value NameHasMaxLength. ",
                 PassedTests = false,
             },
             new()
@@ -81,7 +81,7 @@ namespace RequirementsTracer
                 Id = "ProductNameUnique",
                 ParentId = "ProductForm",
                 Definition = @"Upon changing a product name, it may become equal to the name of another product. If so NameIsInUse becomes true 
-                    and so do NameIsInvalid and ProductIsInvalid; InvalidNameErrorMessage gets value NameUnique.",
+                    and so do NameIsInvalid and ProductIsInvalid; InvalidNameErrorMessage gets value NameNotUnique.",
                 PassedTests = false,
             },
             new()

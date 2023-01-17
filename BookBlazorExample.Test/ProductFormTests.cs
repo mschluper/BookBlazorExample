@@ -67,11 +67,11 @@ namespace BookBlazorExample.Test
             // Have a WaitForAssertion after each potential render to ensure rendering is complete
             cut.WaitForAssertion(() => cut.HasEnabledElements("product-name").Should().BeTrue());
             cut.GetProductName().Should().Be("Football");
-            cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameRequired).Should().BeFalse();
+            cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameIsRequired).Should().BeFalse();
 
             cut.SetProductName("");
 
-            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameRequired).Should().BeTrue());
+            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameIsRequired).Should().BeTrue());
         }
 
         [Fact]
@@ -91,11 +91,11 @@ namespace BookBlazorExample.Test
 
             var maxString = new string('*', 100);
             cut.SetProductName(maxString);
-            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameMaxLength).Should().BeFalse());
+            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameHasMaxLength).Should().BeFalse());
             cut.SetProductName(maxString + "!");
-            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameMaxLength).Should().BeTrue());
+            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameHasMaxLength).Should().BeTrue());
             cut.SetProductName(maxString);
-            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameMaxLength).Should().BeFalse());
+            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameHasMaxLength).Should().BeFalse());
         }
 
         [Fact]
@@ -112,12 +112,12 @@ namespace BookBlazorExample.Test
 
             // Have a WaitForAssertion after each potential render to ensure rendering is complete
             cut.WaitForAssertion(() => cut.HasEnabledElements("product-name").Should().BeTrue());
-            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameUnique).Should().BeFalse());
+            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameNotUnique).Should().BeFalse());
 
             cut.SetProductName("Baseball");
-            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameUnique).Should().BeTrue());
+            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameNotUnique).Should().BeTrue());
             cut.SetProductName("Whatever unique string");
-            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameUnique).Should().BeFalse());
+            cut.WaitForAssertion(() => cut.HasVisibleValidationErrorMessage(States.ProductFormState.NameNotUnique).Should().BeFalse());
         }
 
         [Fact]

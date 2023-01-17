@@ -1,13 +1,13 @@
 using BookBlazorExample.Models;
 using BookBlazorExample.Services;
+using BookBlazorExample.States;
 using Microsoft.AspNetCore.Components;
 
 namespace BookBlazorExample.Pages
 {
     public partial class Reports
     {
-        private List<Requirement> requirements = new();
-        private DateTime lastModifiedDate = DateTime.MinValue;
+        private ReportState state = new();
 
         [Inject]
         public IRequirementService? RequirementService { get; set; }
@@ -23,7 +23,19 @@ namespace BookBlazorExample.Pages
 
         protected override async Task OnInitializedAsync()
         {
-            (var reqs, lastModifiedDate) = await RequirementService!.GetRequirements();
+            var propertyDictionary = await RequirementService!.GetPropertiesByState();
+            state.PropertyDefinitions = propertyDictionary.Keys.SelectMany(stateName =>
+            {
+                var list = propertyDictionary[stateName];
+                var shortName = stateName.Substring(25);    // "BookBlazorExample.States.".Length equals 25
+                return list.Select(e => new StateProperty
+                {
+                    Name = $"{shortName}.{e.Name}",
+                    Definition = e.Definition,
+                });
+            }).ToList();
+
+            (var reqs, state.LastModifiedDate) = await RequirementService!.GetRequirements();
 
             var reqLookup = reqs.ToDictionary(r => r.Id, r => r);
             foreach(Requirement req in reqs)
@@ -51,7 +63,13 @@ namespace BookBlazorExample.Pages
                     });
             }
 
-            requirements = reqs;
+            state.Requirements = reqs;
+        }
+
+        private void OnChangeProperty(ChangeEventArgs e)
+        {
+            var propertyName = e.Value?.ToString();
+            state.SelectedProperty = state.PropertyDefinitions.FirstOrDefault(pd => pd.Name == propertyName);
         }
     }
 }

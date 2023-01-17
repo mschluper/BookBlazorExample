@@ -3,21 +3,21 @@ Copyright (c) Microsoft Corporation.  All rights reserved.
 
 Starting test execution, please wait...
 A total of 1 test files matched the specified pattern.
-[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 7.0.1)
-[xUnit.net 00:00:00.80]   Discovering: BookBlazorExample.Test
-[xUnit.net 00:00:00.83]   Discovered:  BookBlazorExample.Test
-[xUnit.net 00:00:00.83]   Starting:    BookBlazorExample.Test
-[xUnit.net 00:00:01.24]   Finished:    BookBlazorExample.Test
-  Passed BookBlazorExample.Test.ProductFormTests.ProductPriceRequired [288 ms]
-  Passed BookBlazorExample.Test.ProductListTests.Search [328 ms]
-  Passed BookBlazorExample.Test.ProductListTests.DisplayProducts [5 ms]
-  Passed BookBlazorExample.Test.ProductFormTests.ProductNameMaxLength [46 ms]
-  Passed BookBlazorExample.Test.ProductListTests.FilterInStock [8 ms]
-  Passed BookBlazorExample.Test.ProductFormTests.ProductNameRequired [6 ms]
-  Passed BookBlazorExample.Test.ProductFormTests.ProductCategoryRequired [6 ms]
-  Passed BookBlazorExample.Test.ProductFormTests.ProductNameUnique [7 ms]
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 7.0.2)
+[xUnit.net 00:00:00.84]   Discovering: BookBlazorExample.Test
+[xUnit.net 00:00:00.87]   Discovered:  BookBlazorExample.Test
+[xUnit.net 00:00:00.87]   Starting:    BookBlazorExample.Test
+[xUnit.net 00:00:01.41]   Finished:    BookBlazorExample.Test
+  Passed BookBlazorExample.Test.ProductFormTests.ProductPriceRequired [388 ms]
+  Passed BookBlazorExample.Test.ProductListTests.Search [447 ms]
+  Passed BookBlazorExample.Test.ProductListTests.DisplayProducts [4 ms]
+  Passed BookBlazorExample.Test.ProductFormTests.ProductNameMaxLength [55 ms]
+  Passed BookBlazorExample.Test.ProductListTests.FilterInStock [17 ms]
+  Passed BookBlazorExample.Test.ProductFormTests.ProductNameRequired [14 ms]
+  Passed BookBlazorExample.Test.ProductFormTests.ProductCategoryRequired [5 ms]
+  Passed BookBlazorExample.Test.ProductFormTests.ProductNameUnique [6 ms]
 
 Test Run Successful.
 Total tests: 8
      Passed: 8
- Total time: 1.8505 Seconds
+ Total time: 2.0838 Seconds
